@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Ad Blocker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="icons/icon32.png" alt="Pinterest Ad Blocker" class="logo">
+            <h1>Pinterest Ad Blocker</h1>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">本页面已屏蔽:</span>
+                <span class="stat-value" id="blockedCount">0</span>
+                <span class="stat-unit">个广告</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="toggle-container">
+                <label class="toggle-label">
+                    <input type="checkbox" id="enableToggle" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-text">启用广告屏蔽</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="info">
+            <p class="description">
+                自动屏蔽Pinterest网站中的推广内容和广告，让你享受更纯净的浏览体验。
+            </p>
+        </div>
+        
+        <div class="actions">
+            <button id="refreshBtn" class="btn btn-primary">刷新页面</button>
+            <button id="reportBtn" class="btn btn-secondary">报告问题</button>
+        </div>
+        
+        <div class="footer">
+            <p class="version">版本 1.0.0</p>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Pinterest Ad Blocker Content Styles */
+
+/* 隐藏推广和广告内容 - 更强力的CSS规则 */
+[data-test-id="pin"][data-test-promoted="true"],
+[data-test-id="promotedPin"],
+[data-test-id*="promoted"],
+[data-test-id*="ad"],
+[data-test-promoted="true"],
+.promotedPin,
+.ad-pin,
+.sponsored-pin,
+.promoted-pin,
+.AdPin,
+.PromotedPin,
+.SponsoredPin,
+[data-promoted="true"],
+[data-ad-unit-id],
+[data-ad-type] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -1 !important;
+    overflow: hidden !important;
+}
+
+/* 隐藏包含推广标识的Pin容器 */
+[data-test-id="pin"]:has([aria-label*="推广"]),
+[data-test-id="pin"]:has([aria-label*="广告"]),
+[data-test-id="pin"]:has([aria-label*="Promoted"]),
+[data-test-id="pin"]:has([aria-label*="Sponsored"]),
+div:has(> [data-test-id="pin"][data-test-promoted="true"]) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* 隐藏侧边栏广告 */
+.adContainer,
+.ad-container,
+.advertisement,
+.sponsored-content,
+.promoted-content {
+    display: none !important;
+}
+
+/* 隐藏顶部横幅广告 */
+.banner-ad,
+.top-ad,
+.header-ad {
+    display: none !important;
+}
+
+/* 隐藏视频广告 */
+.video-ad,
+.promoted-video {
+    display: none !important;
+}
+
+/* 确保正常内容的显示 */
+[data-test-id="pin"]:not([data-test-promoted="true"]):not([data-promoted="true"]) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* 平滑过渡效果 */
+[data-test-id="pin"] {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 标记已处理的广告元素 */
+.pinterest-ad-blocked {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -1 !important;
+}
+
+/* 被屏蔽元素的淡出效果 */
+.pinterest-ad-blocker-hiding {
+    opacity: 0 !important;
+    transform: scale(0.95) !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* 确保页面布局不受影响 */
+.pinterest-ad-blocker-removed {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
