@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 报告问题按钮
     reportBtn.addEventListener('click', function() {
-        // 可以打开一个反馈页面或者GitHub issues页面
+        // 打开GitHub issues页面
         chrome.tabs.create({
-            url: 'https://github.com/your-username/pinterest-ad-blocker/issues'
+            url: 'https://github.com/BLEZZ0102/pinterest-ad-blocker/issues'
         });
     });
 

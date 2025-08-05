@@ -3,6 +3,7 @@
     'use strict';
 
     let blockedCount = 0;
+    let isEnabled = true; // 插件是否启用
 
     // 创建CSS样式隐藏广告
     function addBlockingStyles() {
@@ -61,6 +62,11 @@
 
     // 隐藏广告元素
     function hideAds() {
+        // 如果插件被禁用，不执行屏蔽
+        if (!isEnabled) {
+            return;
+        }
+
         const pins = document.querySelectorAll('[data-test-id="pin"]');
         let newBlocked = 0;
 
@@ -90,6 +96,16 @@
         }
     }
 
+    // 显示被隐藏的广告
+    function showAds() {
+        const hiddenPins = document.querySelectorAll('.pinterest-ad-hidden');
+        hiddenPins.forEach(pin => {
+            pin.classList.remove('pinterest-ad-hidden');
+            pin.style.removeProperty('display');
+        });
+        console.log(`Pinterest Ad Blocker: 已显示 ${hiddenPins.length} 个广告`);
+    }
+
     // 监听DOM变化
     function startObserver() {
         const observer = new MutationObserver(() => {
@@ -105,19 +121,48 @@
     // 初始化
     function init() {
         console.log('Pinterest Ad Blocker 启动');
-        
+
+        // 加载设置
+        loadSettings();
+
         // 添加样式
         addBlockingStyles();
-        
-        // 立即检查一次
-        setTimeout(hideAds, 1000);
+
+        // 延迟检查，等待设置加载
+        setTimeout(() => {
+            if (isEnabled) {
+                hideAds();
+            }
+        }, 1500);
 
         // 定期检查
-        setInterval(hideAds, 3000);
+        setInterval(() => {
+            if (isEnabled) {
+                hideAds();
+            }
+        }, 3000);
 
         // 监听变化
         if (document.body) {
             startObserver();
+        }
+    }
+
+    // 从存储中加载设置
+    function loadSettings() {
+        try {
+            if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.sync) {
+                chrome.storage.sync.get(['enabled'], function(result) {
+                    isEnabled = result.enabled !== false; // 默认启用
+                    console.log(`Pinterest Ad Blocker: 插件状态 - ${isEnabled ? '启用' : '禁用'}`);
+
+                    if (!isEnabled) {
+                        showAds(); // 如果禁用，显示所有广告
+                    }
+                });
+            }
+        } catch (error) {
+            console.log('Pinterest Ad Blocker: 无法加载设置');
         }
     }
 
@@ -127,6 +172,28 @@
             chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 if (request.action === 'getBlockedCount') {
                     sendResponse({ count: blockedCount });
+                } else if (request.action === 'toggleEnabled') {
+                    isEnabled = request.enabled;
+                    console.log(`Pinterest Ad Blocker: 切换状态 - ${isEnabled ? '启用' : '禁用'}`);
+
+                    if (isEnabled) {
+                        // 启用时立即检查广告
+                        setTimeout(hideAds, 100);
+                    } else {
+                        // 禁用时显示所有广告
+                        showAds();
+                        // 更新徽章为0
+                        try {
+                            chrome.runtime.sendMessage({
+                                action: 'updateBadge',
+                                count: 0
+                            });
+                        } catch (error) {
+                            // 忽略错误
+                        }
+                    }
+
+                    sendResponse({ success: true });
                 }
             });
         }
