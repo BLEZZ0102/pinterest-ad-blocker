@@ -45,15 +45,56 @@
             return true;
         }
 
-        // 检查文本内容 - 添加更多中文广告标识
+        // 检查文本内容 - 多语言广告标识
         const text = element.textContent || '';
-        if (text.includes('推广') ||
-            text.includes('Promoted') ||
-            text.includes('广告') ||
-            text.includes('赞助的 Pin') ||
-            text.includes('赞助的Pin') ||
-            text.includes('Sponsored') ||
-            text.includes('赞助')) {
+
+        // 广告关键词数组 - 支持多国语言
+        const adKeywords = [
+            // 中文 (Chinese)
+            '推广', '广告', '赞助的 Pin', '赞助的Pin', '赞助', '促销',
+
+            // 英文 (English)
+            'Promoted', 'Sponsored', 'Advertisement', 'Ad', 'Promotion',
+
+            // 日文 (Japanese)
+            'プロモーション', 'スポンサー', '広告', 'プロモ', 'スポンサード',
+            'プロモート', '宣伝', '推奨',
+
+            // 韩文 (Korean)
+            '프로모션', '스폰서', '광고', '홍보', '추천', '후원',
+
+            // 希伯来文 (Hebrew - 以色列)
+            'מקודם', 'ממומן', 'פרסומת', 'מודעה', 'קידום', 'חסות',
+
+            // 阿拉伯文 (Arabic - 摩洛哥, 突尼斯, 伊拉克)
+            'مروج', 'ممول', 'إعلان', 'دعاية', 'ترويج', 'رعاية',
+            'مدفوع', 'إعلاني',
+
+            // 立陶宛文 (Lithuanian)
+            'Reklamuojama', 'Remiama', 'Reklama', 'Skelbimas', 'Akcija',
+
+            // 马来文 (Malay - 新加坡)
+            'Dipromosikan', 'Ditaja', 'Iklan', 'Promosi', 'Tajaan',
+
+            // 法文 (French - 摩洛哥, 突尼斯, 瑞士)
+            'Promu', 'Sponsorisé', 'Publicité', 'Annonce', 'Promotion',
+            'Commandité',
+
+            // 德文 (German - 瑞士)
+            'Beworben', 'Gesponsert', 'Werbung', 'Anzeige', 'Förderung',
+
+            // 意大利文 (Italian - 瑞士)
+            'Promosso', 'Sponsorizzato', 'Pubblicità', 'Annuncio', 'Promozione',
+
+            // 斯瓦希里文 (Swahili - 坦桑尼亚)
+            'Kukuzwa', 'Kufadhiliwa', 'Tangazo', 'Matangazo', 'Uongozaji',
+
+            // 西班牙文 (Spanish - 厄瓜多尔)
+            'Promocionado', 'Patrocinado', 'Publicidad', 'Anuncio', 'Promoción'
+        ];
+
+        // 检查是否包含任何广告关键词
+        if (adKeywords.some(keyword => text.includes(keyword))) {
             return true;
         }
 

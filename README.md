@@ -7,9 +7,32 @@
 - 🚫 自动屏蔽Pinterest推广内容和广告
 - 📊 实时统计屏蔽的广告数量
 - 🎛️ 可以随时启用/禁用广告屏蔽功能
+- 🌍 **多语言支持** - 支持13种语言的广告识别
 - 🌐 支持pinterest.com和pinterest.cn
 - 💨 轻量级，不影响页面加载速度
 - 🎨 美观的用户界面
+
+## 🌍 多语言支持
+
+本插件支持以下语言的广告识别，覆盖Pinterest主要用户国家：
+
+| 语言 | 国家/地区 | 示例关键词 |
+|------|-----------|------------|
+| 🇨🇳 中文 | 中国、台湾、香港 | 推广、广告、赞助的Pin |
+| 🇺🇸 英文 | 美国、英国、澳大利亚 | Promoted、Sponsored、Ad |
+| 🇯🇵 日文 | 日本 | プロモーション、広告、スポンサー |
+| 🇰🇷 韩文 | 韩国 | 프로모션、광고、스폰서 |
+| 🇮🇱 希伯来文 | 以色列 | מקודם、ממומן、פרסומת |
+| 🇲🇦 阿拉伯文 | 摩洛哥、突尼斯、伊拉克 | مروج، ممول، إعلان |
+| 🇱🇹 立陶宛文 | 立陶宛 | Reklamuojama、Remiama |
+| 🇸🇬 马来文 | 新加坡 | Dipromosikan、Iklan |
+| 🇫🇷 法文 | 瑞士、摩洛哥 | Promu、Sponsorisé |
+| 🇩🇪 德文 | 瑞士 | Beworben、Gesponsert |
+| 🇮🇹 意大利文 | 瑞士 | Promosso、Sponsorizzato |
+| 🇹🇿 斯瓦希里文 | 坦桑尼亚 | Kukuzwa、Tangazo |
+| 🇪🇨 西班牙文 | 厄瓜多尔 | Promocionado、Patrocinado |
+
+> 详细的多语言支持信息请查看 [MULTILINGUAL_SUPPORT.md](MULTILINGUAL_SUPPORT.md)
 
 ## 安装方法
 
