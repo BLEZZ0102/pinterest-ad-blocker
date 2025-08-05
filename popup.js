@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function saveSettings() {
         const enabled = enableToggle.checked;
         chrome.storage.sync.set({ enabled: enabled }, function() {
-            console.log('设置已保存:', { enabled });
+            console.log('Settings saved:', { enabled });
         });
     }
 

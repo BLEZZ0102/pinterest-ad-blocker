@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Pinterest Ad Blocker",
   "version": "1.0.0",
-  "description": "屏蔽Pinterest网站内的广告内容",
+  "description": "Block advertisements and promoted content on Pinterest",
   "permissions": [
     "activeTab",
     "storage"

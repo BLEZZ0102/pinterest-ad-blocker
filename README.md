@@ -1,5 +1,7 @@
 # Pinterest Ad Blocker
 
+A Chrome browser extension specifically designed to block advertisements on Pinterest.
+
 一个专门用于屏蔽Pinterest网站广告的Chrome浏览器插件。
 
 ## 功能特点
