@@ -1,4 +1,4 @@
-// Pinterest Ad Blocker - 简化版本
+// PinAdBlock - 简化版本
 (function() {
     'use strict';
 
@@ -121,7 +121,7 @@
 
         if (newBlocked > 0) {
             blockedCount += newBlocked;
-            console.log(`Pinterest Ad Blocker: Blocked ${newBlocked} ads, total ${blockedCount} ads`);
+            console.log(`PinAdBlock: Blocked ${newBlocked} ads, total ${blockedCount} ads`);
 
             // 更新插件徽章
             try {
@@ -144,7 +144,7 @@
             pin.classList.remove('pinterest-ad-hidden');
             pin.style.removeProperty('display');
         });
-        console.log(`Pinterest Ad Blocker: Restored ${hiddenPins.length} ads`);
+        console.log(`PinAdBlock: Restored ${hiddenPins.length} ads`);
     }
 
     // 监听DOM变化
@@ -161,7 +161,7 @@
 
     // 初始化
     function init() {
-        console.log('Pinterest Ad Blocker started');
+        console.log('PinAdBlock started');
 
         // 加载设置
         loadSettings();
@@ -195,7 +195,7 @@
             if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.sync) {
                 chrome.storage.sync.get(['enabled'], function(result) {
                     isEnabled = result.enabled !== false; // 默认启用
-                    console.log(`Pinterest Ad Blocker: Status - ${isEnabled ? 'Enabled' : 'Disabled'}`);
+                    console.log(`PinAdBlock: Status - ${isEnabled ? 'Enabled' : 'Disabled'}`);
 
                     if (!isEnabled) {
                         showAds(); // 如果禁用，显示所有广告
@@ -203,7 +203,7 @@
                 });
             }
         } catch (error) {
-            console.log('Pinterest Ad Blocker: Unable to load settings');
+            console.log('PinAdBlock: Unable to load settings');
         }
     }
 
@@ -215,7 +215,7 @@
                     sendResponse({ count: blockedCount });
                 } else if (request.action === 'toggleEnabled') {
                     isEnabled = request.enabled;
-                    console.log(`Pinterest Ad Blocker: Toggled - ${isEnabled ? 'Enabled' : 'Disabled'}`);
+                    console.log(`PinAdBlock: Toggled - ${isEnabled ? 'Enabled' : 'Disabled'}`);
 
                     if (isEnabled) {
                         // 启用时立即检查广告
@@ -239,7 +239,7 @@
             });
         }
     } catch (error) {
-        console.log('Pinterest Ad Blocker: Unable to set up message listener');
+        console.log('PinAdBlock: Unable to set up message listener');
     }
 
     // 启动

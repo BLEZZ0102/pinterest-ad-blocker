@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Pinterest Ad Blocker",
+  "name": "PinAdBlock",
   "version": "1.0.0",
   "description": "Block advertisements and promoted content on Pinterest",
   "permissions": [
@@ -23,7 +23,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Pinterest Ad Blocker",
+    "default_title": "PinAdBlock",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",

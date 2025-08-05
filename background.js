@@ -1,4 +1,4 @@
-// Pinterest Ad Blocker Background Script
+// PinAdBlock Background Script
 
 // 监听来自content script的消息
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

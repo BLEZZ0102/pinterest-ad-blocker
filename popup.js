@@ -1,4 +1,4 @@
-// Pinterest Ad Blocker Popup Script
+// PinAdBlock Popup Script
 
 document.addEventListener('DOMContentLoaded', function() {
     const blockedCountElement = document.getElementById('blockedCount');

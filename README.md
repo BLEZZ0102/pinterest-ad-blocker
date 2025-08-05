@@ -1,4 +1,4 @@
-# Pinterest Ad Blocker
+# PinAdBlock
 
 A Chrome browser extension specifically designed to block advertisements on Pinterest.
 
