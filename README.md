@@ -1,121 +1,124 @@
-# PinAdBlock
+# PinAdBlock - Pinterest Ad Blocker
 
-A Chrome browser extension specifically designed to block advertisements on Pinterest.
+An efficient Pinterest ad blocker browser extension that automatically detects and blocks promotional content and advertisements on Pinterest.
 
-一个专门用于屏蔽Pinterest网站广告的Chrome浏览器插件。
+## ✨ Features
 
-## 功能特点
+- 🚫 **Automatic Ad Blocking** - Real-time detection and hiding of promoted content on Pinterest
+- 📊 **Statistics** - Real-time count of blocked advertisements
+- 🎛️ **Toggle Control** - Easy enable/disable ad blocking functionality
+- 🌍 **Multi-language Support** - Recognizes ads in 13+ languages
+- 🌐 **Wide Compatibility** - Works on pinterest.com and pinterest.cn
+- 💨 **Lightweight** - No impact on page loading speed
+- 🎨 **User-friendly Interface** - Clean and intuitive popup design
 
-- 🚫 自动屏蔽Pinterest推广内容和广告
-- 📊 实时统计屏蔽的广告数量
-- 🎛️ 可以随时启用/禁用广告屏蔽功能
-- 🌍 **多语言支持** - 支持13种语言的广告识别
-- 🌐 支持pinterest.com和pinterest.cn
-- 💨 轻量级，不影响页面加载速度
-- 🎨 美观的用户界面
+## 🌍 Multi-language Support
 
-## 🌍 多语言支持
+This extension supports ad recognition in the following languages, covering Pinterest's major user countries:
 
-本插件支持以下语言的广告识别，覆盖Pinterest主要用户国家：
+| Language | Countries/Regions | Example Keywords |
+|----------|-------------------|------------------|
+| 🇨🇳 Chinese | China, Taiwan, Hong Kong | 推广, 广告, 赞助的Pin |
+| 🇺🇸 English | USA, UK, Australia | Promoted, Sponsored, Ad |
+| 🇯🇵 Japanese | Japan | プロモーション, 広告, スポンサー |
+| 🇰🇷 Korean | South Korea | 프로모션, 광고, 스폰서 |
+| 🇮🇱 Hebrew | Israel | מקודם, ממומן, פרסומת |
+| 🇲🇦 Arabic | Morocco, Tunisia, Iraq | مروج, ممول, إعلان |
+| 🇱🇹 Lithuanian | Lithuania | Reklamuojama, Remiama |
+| 🇸🇬 Malay | Singapore | Dipromosikan, Iklan |
+| 🇫🇷 French | Switzerland, Morocco | Promu, Sponsorisé |
+| 🇩🇪 German | Switzerland | Beworben, Gesponsert |
+| 🇮🇹 Italian | Switzerland | Promosso, Sponsorizzato |
+| 🇹🇿 Swahili | Tanzania | Kukuzwa, Tangazo |
+| 🇪🇨 Spanish | Ecuador | Promocionado, Patrocinado |
 
-| 语言 | 国家/地区 | 示例关键词 |
-|------|-----------|------------|
-| 🇨🇳 中文 | 中国、台湾、香港 | 推广、广告、赞助的Pin |
-| 🇺🇸 英文 | 美国、英国、澳大利亚 | Promoted、Sponsored、Ad |
-| 🇯🇵 日文 | 日本 | プロモーション、広告、スポンサー |
-| 🇰🇷 韩文 | 韩国 | 프로모션、광고、스폰서 |
-| 🇮🇱 希伯来文 | 以色列 | מקודם、ממומן、פרסומת |
-| 🇲🇦 阿拉伯文 | 摩洛哥、突尼斯、伊拉克 | مروج، ممول، إعلان |
-| 🇱🇹 立陶宛文 | 立陶宛 | Reklamuojama、Remiama |
-| 🇸🇬 马来文 | 新加坡 | Dipromosikan、Iklan |
-| 🇫🇷 法文 | 瑞士、摩洛哥 | Promu、Sponsorisé |
-| 🇩🇪 德文 | 瑞士 | Beworben、Gesponsert |
-| 🇮🇹 意大利文 | 瑞士 | Promosso、Sponsorizzato |
-| 🇹🇿 斯瓦希里文 | 坦桑尼亚 | Kukuzwa、Tangazo |
-| 🇪🇨 西班牙文 | 厄瓜多尔 | Promocionado、Patrocinado |
+> For detailed multi-language support information, see [MULTILINGUAL_SUPPORT.md](MULTILINGUAL_SUPPORT.md)
 
-> 详细的多语言支持信息请查看 [MULTILINGUAL_SUPPORT.md](MULTILINGUAL_SUPPORT.md)
+## 📦 Installation
 
-## 安装方法
+### Method 1: Developer Mode Installation (Recommended)
 
-### 方法一：开发者模式安装（推荐）
+1. Open Chrome browser
+2. Navigate to `chrome://extensions/`
+3. Enable "Developer mode" toggle in the top right
+4. Click "Load unpacked"
+5. Select this project's folder
+6. Extension installed successfully!
 
-1. 打开Chrome浏览器
-2. 在地址栏输入 `chrome://extensions/` 并回车
-3. 打开右上角的"开发者模式"开关
-4. 点击"加载已解压的扩展程序"
-5. 选择本项目的文件夹
-6. 插件安装完成！
+### Method 2: Packaged Installation
 
-### 方法二：打包安装
+1. Go to Chrome extensions page and click "Pack extension"
+2. Select this project folder to generate .crx file
+3. Drag the .crx file to Chrome extensions page to install
 
-1. 在Chrome扩展程序页面点击"打包扩展程序"
-2. 选择本项目文件夹，生成.crx文件
-3. 将.crx文件拖拽到Chrome扩展程序页面进行安装
+## 🚀 Usage
 
-## 使用方法
+1. After installation, visit Pinterest website
+2. The extension will automatically start blocking ads
+3. Click the extension icon in the browser toolbar to view statistics
+4. Use the popup interface to enable/disable ad blocking
 
-1. 安装插件后，访问Pinterest网站
-2. 插件会自动开始屏蔽广告内容
-3. 点击浏览器工具栏中的插件图标查看统计信息
-4. 可以通过弹窗界面开启/关闭广告屏蔽功能
+## 🔍 Blocking Mechanism
 
-## 屏蔽原理
+The extension identifies and blocks ads through:
 
-插件通过以下方式识别和屏蔽广告：
+- Detection of keywords: "推广", "广告", "Promoted", "Sponsored", etc.
+- Recognition of specific ad-related CSS classes and data attributes
+- DOM change monitoring for real-time blocking of newly loaded ads
+- CSS styling to hide advertisement elements
 
-- 检测包含"推广"、"广告"、"Promoted"、"Sponsored"等关键词的内容
-- 识别特定的广告相关CSS类名和数据属性
-- 监控DOM变化，实时屏蔽新加载的广告内容
-- 使用CSS样式隐藏广告元素
-
-## 文件结构
+## 📁 File Structure
 
 ```
 pinterest-ad-blocker/
-├── manifest.json          # 插件配置文件
-├── content.js             # 内容脚本（主要屏蔽逻辑）
-├── background.js          # 后台脚本
-├── popup.html             # 弹窗界面
-├── popup.css              # 弹窗样式
-├── popup.js               # 弹窗脚本
-├── styles.css             # 内容样式
-├── icons/                 # 图标文件夹
+├── manifest.json          # Extension configuration
+├── content.js             # Content script (main blocking logic)
+├── background.js          # Background script
+├── popup.html             # Popup interface
+├── popup.css              # Popup styling
+├── popup.js               # Popup script
+├── icons/                 # Icon files
 │   ├── icon16.png
 │   ├── icon32.png
 │   ├── icon48.png
 │   └── icon128.png
-└── README.md              # 说明文档
+└── README.md              # Documentation
 ```
 
-## 技术特性
+## ⚙️ Technical Features
 
-- **Manifest V3**: 使用最新的Chrome扩展API
-- **实时监控**: 使用MutationObserver监控DOM变化
-- **性能优化**: 防抖处理，避免频繁执行
-- **用户友好**: 直观的统计界面和控制选项
+- **Manifest V3**: Latest Chrome extension API
+- **Real-time Monitoring**: MutationObserver for DOM changes
+- **Performance Optimized**: Debounced processing to avoid frequent execution
+- **User-friendly**: Intuitive statistics interface and control options
 
-## 注意事项
+## ⚠️ Notes
 
-- 本插件仅在Pinterest网站上生效
-- 首次访问页面时可能需要几秒钟来完全屏蔽所有广告
-- 如果发现有广告未被屏蔽，可以通过弹窗界面报告问题
+- This extension only works on Pinterest websites
+- It may take a few seconds to fully block all ads on first page visit
+- If you find unblocked ads, you can report issues through the popup interface
 
-## 更新日志
+## 📋 Changelog
 
 ### v1.0.0
-- 初始版本发布
-- 支持基本的广告屏蔽功能
-- 添加统计和控制界面
+- Initial release
+- Basic ad blocking functionality
+- Statistics and control interface
 
-## 许可证
+## 📄 License
 
 MIT License
 
-## 贡献
+## 🤝 Contributing
 
-欢迎提交Issue和Pull Request来改进这个插件！
+Welcome to submit Issues and Pull Requests to improve this extension!
 
-## 免责声明
+## 🔗 Links
 
-本插件仅供学习和个人使用，请遵守相关网站的使用条款。
+- **GitHub Repository**: https://github.com/BLEZZ0102/pinterest-ad-blocker
+- **Report Issues**: https://github.com/BLEZZ0102/pinterest-ad-blocker/issues
+- **Privacy Policy**: https://github.com/BLEZZ0102/pinterest-ad-blocker/blob/main/PRIVACY_POLICY.md
+
+## ⚖️ Disclaimer
+
+This extension is for educational and personal use only. Please comply with the terms of service of relevant websites.
